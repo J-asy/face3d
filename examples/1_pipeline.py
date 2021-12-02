@@ -57,7 +57,8 @@ rendering =  mesh.render.render_colors(image_vertices, triangles, lit_colors, h,
 save_folder = 'results/pipeline'
 if not os.path.exists(save_folder):
     os.mkdir(save_folder)
-io.imsave('{}/rendering.jpg'.format(save_folder), rendering)
+# io.imsave('{}/rendering.jpg'.format(save_folder), rendering)
+io.imsave('{}/rendering.jpg'.format(save_folder), (rendering * 255).astype(np.uint8))
 
 # ---- show mesh
 # mesh.vis.plot_mesh(camera_vertices, triangles)
